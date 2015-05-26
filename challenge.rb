@@ -2,14 +2,6 @@ require 'minitest/autorun'
 
 require './dice'
 
-# Implement these classes to get the specs below to pass
-class Dice
-end
-
-class LoadedDice
-end
-
-
 class TestDice < MiniTest::Test
   def test_it_knows_how_many_sides_it_has
     d7 = Dice.new 7 # Take that, geometry

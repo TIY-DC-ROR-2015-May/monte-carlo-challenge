@@ -12,6 +12,9 @@ class Dice
     return false
   end
   
+  def but_really_is_it_loaded?
+    return false
+  end
 end
 
 class LoadedDice <     Dice

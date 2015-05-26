@@ -3,12 +3,6 @@ require 'minitest/autorun'
 require './dice'
 
 # Implement these classes to get the specs below to pass
-class Dice
-end
-
-class LoadedDice
-end
-
 
 class TestDice < MiniTest::Test
   def test_it_knows_how_many_sides_it_has
@@ -22,7 +16,7 @@ class TestDice < MiniTest::Test
     100.times { rolls.push d20.roll }
 
     assert rolls.max <= 20
-    assert rolls.min >= 0
+    assert rolls.min >= 1
     assert rolls.uniq.count > 5
   end
 

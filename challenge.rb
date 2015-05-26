@@ -1,12 +1,31 @@
 require 'minitest/autorun'
-
-require './dice'
+require 'pry'
 
 # Implement these classes to get the specs below to pass
 class Dice
+  def initialize sides
+      @sides = sides
+  end
+  attr_reader :sides
+  def roll
+    rand(1..@sides)
+  end
+   def loaded?
+    return false
+  end
+  def but_really_is_it_loaded?
+    return true
+  end
 end
 
-class LoadedDice
+class LoadedDice < Dice
+  def initialize sides
+      @sides = sides
+  end
+  attr_reader :sides
+  def roll
+    rand(1..@sides)+1
+  end
 end
 
 
@@ -31,7 +50,7 @@ class TestDice < MiniTest::Test
     total = 0
     1000.times { total += d6.roll }
     average = total / 1000.0
-
+# binding.pry
     assert_in_epsilon 3.5, average, 0.1
   end
 

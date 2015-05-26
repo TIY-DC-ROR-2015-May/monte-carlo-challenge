@@ -23,6 +23,13 @@ class LoadedDice <     Dice
   end
 
   def roll
+    # roll1 = super
+    # if roll1 > 3
+    #   return roll3
+    # else
+    #   super
+    # end
+    
     n = rand(1..3)
     if n >1
       return rand(3..@sides)
